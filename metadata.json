@@ -1,0 +1,6 @@
+{
+  "name": "液体表面张力测定处理工具",
+  "description": "基于拉脱法的物理实验数据处理系统，支持传感器定标、最小二乘法拟合、误差分析及自动计算表面张力系数。",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

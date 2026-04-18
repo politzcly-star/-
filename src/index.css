@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  --color-primary: #2563eb;
+  --color-primary-light: #eff6ff;
+  --color-text-main: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-accent: #10b981;
+  --color-bg: #f3f4f6;
+
+  --breakpoint-xs: 480px;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-main antialiased font-sans;
+  }
+}
+
+.card {
+  @apply bg-white rounded-[12px] border border-border shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] flex flex-col overflow-hidden;
+}
+
+.card-header {
+  @apply px-4 py-3 bg-[#fafafa] border-b border-border font-semibold text-[0.875rem] flex justify-between items-center;
+}
+
+.card-content {
+  @apply p-4 flex-1;
+}
+
+.scientific-input {
+  @apply w-full p-2 border border-border rounded-[6px] font-mono text-[0.875rem] outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white;
+}
+
+/* 隐藏数字输入的上下箭头，防止遮挡数值 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.table-header {
+  @apply p-1.5 sm:p-2 text-left text-text-muted font-medium text-[0.7rem] sm:text-[0.8125rem] border-b border-border;
+}
+
+.table-cell {
+  @apply p-1 sm:p-2 font-mono text-[0.75rem] sm:text-[0.8125rem] border-b border-[#f9fafb];
+}
+
+.btn-primary {
+  @apply flex-1 p-[0.6rem] rounded-[6px] font-semibold text-[0.875rem] cursor-pointer bg-primary text-white hover:bg-blue-700 transition-colors shadow-sm;
+}
+
+.btn-secondary {
+  @apply flex-1 p-[0.6rem] rounded-[6px] font-semibold text-[0.875rem] cursor-pointer bg-[#f3f4f6] text-text-main hover:bg-slate-200 transition-colors;
+}
+
+.metric {
+  @apply flex justify-between mb-2 text-[0.8125rem];
+}
+
+.metric span:first-child {
+  @apply text-text-muted;
+}
+
+.metric span:last-child {
+  @apply font-semibold font-mono;
+}
+
+.result-box {
+  @apply bg-primary-light border border-primary rounded-[8px] p-4 text-center;
+}
+
+.result-val {
+  @apply text-[1.5rem] font-bold text-primary font-mono;
+}
+
+/* 移动端专家模式专用样式 */
+.mobile-tab-btn {
+  @apply flex-1 flex flex-col items-center justify-center py-2 text-[11px] font-medium transition-all gap-1;
+}
+
+.mobile-tab-btn.active {
+  @apply text-primary bg-primary-light/50;
+}
+
+.mobile-tab-btn:not(.active) {
+  @apply text-text-muted;
+}
+
+.input-focus-row {
+  @apply bg-primary-light/30 transition-colors;
+}
+
+.sticky-bottom-summary {
+  @apply fixed bottom-[60px] left-0 right-0 bg-white border-t border-border px-4 py-2 flex justify-between items-center lg:hidden z-40 shadow-[0_-4px_12px_rgba(0,0,0,0.05)];
+}
+
